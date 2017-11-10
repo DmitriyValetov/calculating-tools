@@ -63,6 +63,7 @@ while len(cmd_list):
             os.chdir(dirs[i]) # even the app can miss it's support files
             proc_list.append(subprocess.Popen(cmd, shell=True))
             instance[0]+=1
+            dirs.remove(dirs[i])
             cmd_list.remove(cmd)
             
             if instance[0] >= instance_max:
